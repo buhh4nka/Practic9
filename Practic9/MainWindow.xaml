@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practic9"
         mc:Ignorable="d"
-        Title="MainWindow" Height="388" Width="592" ResizeMode="CanMinimize" >
+        Title="Склад ПК" Height="321" Width="592" ResizeMode="CanMinimize" >
     <Grid>
         <Menu VerticalAlignment="Top" Height="18">
             <MenuItem HorizontalAlignment="Center" Height="18" Width="73" Header="Программа">
@@ -13,24 +13,29 @@
                 <MenuItem x:Name="exit" Header="Выход" Click="exit_Click"></MenuItem>
             </MenuItem>
         </Menu>
-        <DataGrid Margin="0,32,10,10" HorizontalAlignment="Right" Width="304"/>
+        <DataGrid x:Name="dataGrid" Margin="0,32,10,10" HorizontalAlignment="Right" Width="304" >
+        </DataGrid>
         <GroupBox Header="Характеристики" Margin="10,23,319,0" Height="163" VerticalAlignment="Top">
             <Grid>
-                <TextBox HorizontalAlignment="Left" Margin="145,9,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
-                <TextBox HorizontalAlignment="Left" Margin="145,32,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
-                <TextBox HorizontalAlignment="Left" Margin="145,55,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
-                <TextBox HorizontalAlignment="Left" Margin="145,78,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
+                <TextBox x:Name="processorOutput" HorizontalAlignment="Left" Margin="145,9,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
+                <TextBox x:Name="ramOutput" HorizontalAlignment="Left" Margin="145,32,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" ToolTip="Указано в МБ"/>
+                <TextBox x:Name="memoryOutput" HorizontalAlignment="Left" Margin="145,55,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" ToolTip="Указано в МБ"/>
+                <TextBox x:Name="gpuOutput" HorizontalAlignment="Left" Margin="145,78,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,9,0,0" Text="Тип процессора:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="123"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,32,0,0" Text="Оперативная память:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="123"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,55,0,0" Text="Физическая память:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="123"/>
                 <TextBlock HorizontalAlignment="Left" Margin="10,78,0,0" Text="Видеокарта:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="123"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="145,110,0,0" VerticalAlignment="Top" Width="67"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="67"/>
+                <Button x:Name="addPC" Content="Добавить" HorizontalAlignment="Left" Margin="145,110,0,0" VerticalAlignment="Top" Width="67" Click="addPC_Click"/>
+                <Button x:Name="clear" Content="Очистить" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="67" Click="clear_Click"/>
 
             </Grid>
         </GroupBox>
-        <GroupBox Header="Средние характеристики" Margin="10,191,319,10">
+        <GroupBox Header="Средние характеристики" Margin="10,191,319,0" Height="84" VerticalAlignment="Top">
             <Grid>
+                <TextBox x:Name="averageRAM" IsReadOnly="True" HorizontalAlignment="Left" Margin="163,9,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" ToolTip="Указано в МБ"/>
+                <TextBox x:Name="averageMemory" IsReadOnly="True" HorizontalAlignment="Left" Margin="163,33,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" ToolTip="Указано в МБ"/>
+                <TextBlock HorizontalAlignment="Left" Margin="1,9,0,0" Text="Среднее кол-во оп. памяти:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="162"/>
+                <TextBlock HorizontalAlignment="Left" Margin="1,33,0,0" Text="Среднее кол-во физ. памяти:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="162"/>
 
             </Grid>
         </GroupBox>
